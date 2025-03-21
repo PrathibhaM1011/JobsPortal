@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        
+
+
+
+       
+body {
+    background: linear-gradient(120deg, #2c3e50, #4ca1af);
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* Container */
+#container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); /* Adjust width */
+    gap: 20px;
+    padding: 20px;
+    max-width: 1200px; /* Ensures a neat structure */
+    width: 100%;
+}
+
+/* Item Styling */
+.item {
+    border: 2px solid #ff4d6d;
+    background: white;
+    border-radius: 12px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeIn 0.5s ease-out forwards;
+}
+
+/* Hover effect */
+.item:hover {
+    transform: scale(1.05);
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Image Styling */
+.item img {
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+    padding: 5px;
+    object-fit: cover;
+}
+
+/* Job Title Styling */
+.item p {
+    font-size: 16px;
+    margin: 10px 0;
+}
+
+.item p span {
+    font-weight: bold;
+    color: #333;
+}
+
+/* Job Link */
+.item a {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 8px 12px;
+    background-color: #ff4d6d;
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: bold;
+    transition: background 0.3s ease;
+}
+
+.item a:hover {
+    background-color: #d8435e;
+}
+
+
+        /* Loader Container */
+        #loader-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Full viewport height */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.2); /* Optional: semi-transparent background */
+}
+
+/* Loader */
+.loader {
+    width: 80px;
+    height: 80px;
+    color: #ff4d6d;
+    position: relative;
+
+    background:
+        conic-gradient(from -45deg at top 40px left 50%, transparent, currentColor 1deg 90deg, transparent 91deg),
+        conic-gradient(from 45deg at right 40px top 50%, transparent, currentColor 1deg 90deg, transparent 91deg),
+        conic-gradient(from 135deg at bottom 40px left 50%, transparent, currentColor 1deg 90deg, transparent 91deg),
+        conic-gradient(from -135deg at left 40px top 50%, transparent, currentColor 1deg 90deg, transparent 91deg);
+    animation: rotateLoader 1.5s infinite cubic-bezier(0.3, 1, 0, 1);
+}
+
+/* Loader Animation */
+@keyframes rotateLoader {
+    50% { width: 100px; height: 100px; transform: rotate(180deg); }
+    100% { transform: rotate(360deg); }
+}
+    </style>
+</head>
+<body>
+
+    <div id="loader-container">
+        <div class="loader"></div>
+    </div>
+     
+    <div id="container">
+       
+    </div>
+    <script src="task5.js"></script>
+</body>
+</html>
